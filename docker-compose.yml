@@ -9,3 +9,9 @@ services:
       - ./data/redis:/data
       - ./config/redis.conf:/redis.conf
     command: redis-server /redis.conf
+  
+  k6:
+    container_name: k6
+    image: loadimpact/k6
+    volumes:
+      - ./scripts:/scripts
